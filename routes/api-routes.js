@@ -37,9 +37,9 @@ app.get("/api/all", function(req, res) {
       where: {
       category:req.params.category
     }
-  }).then(function(category)){
+  }).then(function(category) {
     res.json(category)
-  }
+  })
 
   });
 
