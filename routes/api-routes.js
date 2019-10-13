@@ -7,12 +7,21 @@
 
 // Requiring our Todo model
 var keys = require("../keys.js");
-// var google = new Google(keys.google);
 var db = require("../models");
-
+var axios = require('axios');
+const api_key = process.env.API_KEY;
 // Routes
 // =============================================================
 module.exports = function(app) {
+  if (process.argv[2] === "political"){
+    axios.get("https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAmDUcM8jTLMSH2DIR9dWif4RMZeCUX87o&address=926 N 92nd StSeattle, WA 98103&roles=headofstate").then(
+        function (response) {
+           console.log(response.data.officials)
+        }
+    ).catch(function (err) {
+        console.log(err);
+    })
+}
 
   // GET route for getting all of the posts
   app.get("/api/posts", function(req, res) {
