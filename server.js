@@ -5,7 +5,8 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-
+require("dotenv").config()
+// console.log("PROCESS.ENV ",  process.env)
 
 
 // Sets up the Express App
