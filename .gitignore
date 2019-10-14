@@ -1,4 +1,5 @@
 node_modules
+<<<<<<< HEAD
 
 # everything for the user profiles below here:
 # Logs
@@ -64,3 +65,7 @@ typings/
 .next
 
 #end of user profile stuff
+=======
+.DS_Store
+.env
+>>>>>>> 8b82f02bb4a8b7469e3ccab21add1f1f6211997b
