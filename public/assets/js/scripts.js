@@ -1,0 +1,1 @@
+console.log("like the legend of zelda, im linked.")
