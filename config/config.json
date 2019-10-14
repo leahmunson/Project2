@@ -1,17 +1,32 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "password",
+    "database": "userprofile_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+=======
     "password": "Password",
     "database": "blogger",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
+>>>>>>> 8b82f02bb4a8b7469e3ccab21add1f1f6211997b
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
+<<<<<<< HEAD
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+=======
     "port": 3306,
     "dialect": "mysql"
   },
@@ -21,6 +36,7 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "port": 3306,
+>>>>>>> 8b82f02bb4a8b7469e3ccab21add1f1f6211997b
     "dialect": "mysql"
   }
 }
