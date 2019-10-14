@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS authorization_demo;
-CREATE DATABASE authorization_demo;
+DROP DATABASE IF EXISTS userprofile_db;
+CREATE DATABASE userprofile_db;

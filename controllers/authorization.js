@@ -8,7 +8,7 @@ router.get('/secret',function(req,res){
     if(req.session.user) {
         res.render('securepage',req.session.user);
     }else {
-        res.send('log in first jabroni!')
+        res.send('Please login.')
     }
 })
 //get route to retrieve all users info, only for dev, remove from production
@@ -54,7 +54,7 @@ router.post('/login',function(req,res){
         else {
             //delete existing user, add error
             req.session.user= false;
-            req.session.error = 'auth failed bro'
+            req.session.error = 'auth failed'
         }
         res.json(req.session);
     })

@@ -1,1 +1,1 @@
-console.log("like the legend of zelda, im linked.")
+console.log("I am linked!")
