@@ -6,21 +6,31 @@
 // =============================================================
 
 // Requiring our Todo model
-var keys = require("../keys.js");
+// var keys = require("../keys.js");
 var db = require("../models");
 var axios = require('axios');
-const api_key = process.env.API_KEY;
+
+var api_key = process.env.API_KEY;
 // Routes
 // =============================================================
 module.exports = function(app) {
   if (process.argv[2] === "political"){
-    axios.get("https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAmDUcM8jTLMSH2DIR9dWif4RMZeCUX87o&address=926 N 92nd StSeattle, WA 98103&roles=headofstate").then(
+    axios.get("https://www.googleapis.com/civicinfo/v2/representatives?"+api_key+"&address=926 N 92nd St Seattle, WA 98103").then(
         function (response) {
-           console.log(response.data.officials)
+           console.log(response.data)
         }
     ).catch(function (err) {
         console.log(err);
     })
+  
+// } else if (process.argv[2] === "political"){
+//   axios.get("https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDI_aaJrRSSR8n3p-m6OoNC8FSDgvVS_Gk&address=926 N 92nd StSeattle, WA 98103&roles=headofstate").then(
+//       function (response) {
+//          console.log(response.data)
+//       }
+//   ).catch(function (err) {
+//       console.log(err);
+//   })
 }
 
   // GET route for getting all of the posts
