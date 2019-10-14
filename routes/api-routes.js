@@ -37,11 +37,11 @@ app.get("/api/all", function(req, res) {
       where: {
       category:req.params.category
     }
-  }).then(function(category)){
+  }).then(function(category){
     res.json(category)
   }
 
-  });
+  })
 
   // Get route for retrieving a single post
   app.get("/api/posts/:id", function(req, res) {
