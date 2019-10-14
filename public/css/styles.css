@@ -1,21 +1,5 @@
-button.submit {
-  float: right;
-}
-
-form#cms {
-  margin-top: 50px;
-}
-
-#cms textarea {
-  resize: none;
-}
-
-.card-header button.delete,
-button.edit {
-  float: right;
-  margin: 5px;
-}
-
-.top-30 {
-  margin-top: 30px;
+.yolo{
+  background: url(./Seattle_Kerry_Park_Skyline.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
