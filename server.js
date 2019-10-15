@@ -4,25 +4,16 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-// var express = require("express");
-// require("dotenv").config()
-// // console.log("PROCESS.ENV ",  process.env)
-
-
-// // Sets up the Express App
-// // =============================================================
-// var app = express();
-// var PORT = process.env.PORT || 8080;
-
-
 
 var express = require('express');
 //using express-session to enable session storage for our server
-var session = require("express-session");
 require('dotenv').config();
+
 // Sets up the Express App
 // =============================================================
 var app = express();
+var session = require("express-session");
+
 var PORT = process.env.PORT || 3033;
 //imports entire controllers folder, we will handle moularization there
 var allRoutes = require('./controllers');

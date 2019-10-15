@@ -3,21 +3,21 @@ var router = express.Router();
 var db = require('../models');
 var bcrypt = require('bcrypt');
 
-// //get route for secret clubhouse, if logged in will elt you in, otherwise will fail
-// router.get('/secret',function(req,res){
-//     if(req.session.user) {
-//         res.render('securepage',req.session.user);
-//     }else {
-//         res.send('Please login.')
-//     }nod
-// })
-
-//get route to retrieve all users info, only for dev, remove from production
-router.get('/allUsers',function(req,res){
-    db.User.findAll().then(function(users){
-        res.json(users);
-    })
+//get route for secret clubhouse, if logged in will elt you in, otherwise will fail
+router.get('/secret',function(req,res){
+    if(req.session.user) {
+        res.render('securepage',req.session.user);
+    }else {
+        res.send('Please login.')
+    }nod
 })
+
+// //get route to retrieve all users info, only for dev, remove from production
+// router.get('/allUsers',function(req,res){
+//     db.User.findAll().then(function(users){
+//         res.json(users);
+//     })
+// })
 
 //loads signup form
 router.get('/signup',function(req,res){
