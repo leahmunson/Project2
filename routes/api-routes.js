@@ -11,14 +11,15 @@ var db = require("../models");
 var axios = require('axios');
 
 var api_key = process.env.API_KEY;
+var map_api_key = process.env.MAP_API_KEY;
 console.log(api_key)
 // Routes
 // =============================================================
 module.exports = function (app) {
   
   //Google Maps JavaScript API
-  app.get('/api/google', (req, res) => {
-    axios.get("https://www.googleapis.com/civicinfo/v2/voterinfo?key="+api_key+"&address=3261+SW+Avalon+Way+Seattle+WA&electionId=2000")
+  app.get('/api/googlemap', (req, res) => {
+    axios.get("https://maps.googleapis.com/maps/api/js?key="+map_api_key+"&callback=initMap")
     
     .then(
       function (response) {
