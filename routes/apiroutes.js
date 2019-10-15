@@ -102,7 +102,7 @@ module.exports = function(app) {
             const $ = cheerio.load(response.data);
            $('#mainColMain > div.containerPadTopSides > div').each((i, elem)=>{
                data.push({
-                Name:$('#herbold > div.col-sm-9,$(elem).html()).text(),
+                // Name:$('#herbold > div.col-sm-9,$(elem).html()).text(),
                 Name: $('#herbold > div.col-sm-9 > h2 > a',$(elem).html()).text(),
                 District: $('.positiongInfo',$(elem).html()).text(),
                 CommitteesChair: $('#herbold > div.col-sm-9 > ul:nth-child(4) > li:nth-child(1) > a',$(elem).html()).text(),
