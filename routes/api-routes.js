@@ -29,6 +29,18 @@ module.exports = function (app) {
       res.json(err)
     })
   })
+  app.get('/api/openfec', (req, res) => {
+    axios.get("https://api.open.fec.gov/v1/candidates/?state=WA&per_page=20&api_key=RpuoKCxTyk4qCrHiuApEKBECg4TQpyzUZadBmiGQ&sort_null_only=false&sort_hide_null=false&page=1&sort_nulls_last=false&sort=name")
+    .then(
+      function (response) {
+        console.log(response)
+        res.json(response)
+      }
+    ).catch(function (err) {
+      console.log(err);
+      res.json(err)
+    })
+  })
 
     // } else if (process.argv[2] === "political"){
     //   axios.get("https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDI_aaJrRSSR8n3p-m6OoNC8FSDgvVS_Gk&address=926 N 92nd StSeattle, WA 98103&roles=headofstate").then(
