@@ -1,13 +1,10 @@
 .yolo{
-  background: url(../css/Seattle_Kerry_Park_Skyline.jpg);
+  background: url(../assets/Seattle_Kerry_Park_Skyline.jpg);
   background-size:100% 350px;
   background-repeat: no-repeat;
+  background-color: #37474F;
 }
 
-.yolo{
-  background-color: #37474F
-  ;
-}
 .modal-content{
   background: url(/public/css/needle.jpg) !important;
 }
