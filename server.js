@@ -4,15 +4,15 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require("express");
-require("dotenv").config()
-// console.log("PROCESS.ENV ",  process.env)
+// var express = require("express");
+// require("dotenv").config()
+// // console.log("PROCESS.ENV ",  process.env)
 
 
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
+// // Sets up the Express App
+// // =============================================================
+// var app = express();
+// var PORT = process.env.PORT || 8080;
 
 
 
@@ -50,8 +50,10 @@ require("./routes/apiroutes.js")(app)
 //require("./controllers/index.js")(app)
 
 
-db.sequelize.sync({ force: false}).then(function() {
+db.sequelize.sync({ force: true}).then(function() {
     app.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);
     });
-});
+}) .catch (function(err) {
+    console.log(err)
+})
