@@ -1,16 +1,23 @@
-<h1>LOGIN PAGE</h1>
-
 
 <form>
     <input type="text" name = "name" placeholder="Username">
     <input type="password" name = "password" placeholder="password" >
-    <input type="submit" value="Go Go go!">
+    <input type="text" name = "district" placeholder="district">
+    <input type="submit" value="Submit">
 </form>
 
 <a href="/auth/signup">First time? sign up here!</a>
 
-//TODO: onclick event
 <script>
+//onclick event for submit button
+        $(document).ready(function() { 
+            $("TODO: BUTTON ID HERE").click(function() { 
+                //form dissapears once submit button is clicked
+                $("<form>").fadeOut(); 
+            }); 
+        });
+
     var name = $("[name=name]").val()
+
     $.post
 </script>
