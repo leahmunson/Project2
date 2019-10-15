@@ -1,21 +1,3 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
-require("dotenv").config()
-// console.log("PROCESS.ENV ",  process.env)
-
-
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
-
-
-
 var express = require('express');
 //using express-session to enable session storage for our server
 var session = require("express-session");
@@ -46,11 +28,11 @@ app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitia
 
 
 app.use('/',allRoutes);
-require("./routes/apiroutes.js")(app)
+// require("./routes/apiroutes.js")(app)
 //require("./controllers/index.js")(app)
 
 
-db.sequelize.sync({ force: false}).then(function() {
+db.sequelize.sync({ force: true}).then(function() {
     app.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);
     });
