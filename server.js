@@ -46,7 +46,7 @@ app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitia
 
 
 app.use('/',allRoutes);
-// require("./routes/apiroutes.js")(app)
+require("./routes/apiroutes.js")(app)
 //require("./controllers/index.js")(app)
 
 
