@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         district: {
             type:DataTypes.STRING,
-            allowNull:false,
+            // allowNull:false,
         }
 
     });
