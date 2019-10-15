@@ -15,7 +15,23 @@ console.log(api_key)
 // Routes
 // =============================================================
 module.exports = function (app) {
+  
+  //Google Maps JavaScript API
   app.get('/api/google', (req, res) => {
+    axios.get("https://www.googleapis.com/civicinfo/v2/voterinfo?key="+api_key+"&address=3261+SW+Avalon+Way+Seattle+WA&electionId=2000")
+    
+    .then(
+      function (response) {
+        console.log(response.data)
+        res.json(response.data)
+      }
+    ).catch(function (err) {
+      console.log(err);
+      res.json(err)
+    })
+  
+  //Google Civics Api --- Not working how we want it
+    app.get('/api/google', (req, res) => {
     axios.get("https://www.googleapis.com/civicinfo/v2/voterinfo?key="+api_key+"&address=3261+SW+Avalon+Way+Seattle+WA&electionId=2000")
     // axios.get("https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyDI_aaJrRSSR8n3p-m6OoNC8FSDgvVS_Gk&address=926 N 92nd St Seattle, WA 98103")
     // axios.get("https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDI_aaJrRSSR8n3p-m6OoNC8FSDgvVS_Gk&address=926 N 92nd St Seattle, WA 98103&regional")
@@ -29,6 +45,8 @@ module.exports = function (app) {
       res.json(err)
     })
   })
+
+  //Open FEC API --- Not working how we want it
   app.get('/api/openfec', (req, res) => {
     axios.get("https://api.open.fec.gov/v1/candidates/?state=WA&per_page=20&api_key=RpuoKCxTyk4qCrHiuApEKBECg4TQpyzUZadBmiGQ&sort_null_only=false&sort_hide_null=false&page=1&sort_nulls_last=false&sort=name")
     .then(
