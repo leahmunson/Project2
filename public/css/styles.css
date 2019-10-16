@@ -1,43 +1,51 @@
-
+body{
+  background-color:#353638 !important;
+  margin-bottom: 5% !important;
+  
+}
 .seapoll{
   background-image: url(/assets/Seattle_Kerry_Park_Skyline.jpg);
   background-size:100% 350px;
   background-repeat: no-repeat;
   min-height: 39vh;
 }
-.mainStuff{
-  background-color: #37474F;
-  /* width: 10000% !important; */
-  
-}
 .signBody{
-  background: url(/assets/needle.jpg) !important;
-  /* background-size:cover!important; */
+  background: url(/assets/seattle_skyline.jpg) !important;
   background-repeat: no-repeat !important;
   color: white;
-  background-size: auto 100% !important;
+  background-size: cover !important;
 }
 
 .yoda{
-  width: 50%;
+  height: 78vh;
+  width: 90%;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .cards{
   display: flex !important;
    justify-content: space-between !important;
    flex-wrap: wrap !important;
-
+padding-top: 1%;
 }
 
 .card{
   flex: 1 0 50%;
 }
 
-.bodi{
-  background-color:#353638;
-  min-height: 100vh !important;
-  background-size: auto;
+
+.yolo{
+color: white;
 }
 
+
+.youTube{
+  border: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* button{
+  background-color:#353638 !important ;
+} */
