@@ -29,22 +29,24 @@
   </div>  
 
 <script>
-  //user log in
-  //onclick event for login button
-  $(".login").on("click", function (event) {
+//user login events 
+//onclick event for login button
+  $("TODO:.login").on("click", function(event) {
     event.preventDefault();
-    //form dissapears once submit button is clicked
-    $("<form>").fadeOut();
 
+    //form dissapears once submit button is clicked
+    //$("<form>").fadeOut(); 
+
+    //store variables
     var name = $("[name=name]").val()
     var password = $("[name=password]").val()
     //var district = $("[name=district]").val()
+    console.log({name, password})
 
-    console.log({ name, password })
-    //post event 
-    $.post("/auth/login", { name, password })
-      .then(function (data) {
-        console.log(data)
+//post event for login - sending back to server
+ $.post("/auth/login", {name, password})
+ .then(function(data) {
+        console.log(data)          
 
         // Clear the form when submitting
         $("#TODO:Name ID").val("");
@@ -53,22 +55,24 @@
       });
   });
 
-  //user signup
-  //onclick event for signup button
-  $(".signup").on("click", function (event) {
+//user signup events
+//onclick event for signup button
+  $("TODO:.signup").on("click", function(event) {
     event.preventDefault();
     //form dissapears once submit button is clicked
-    $("<form>").fadeOut();
+    //$("<form>").fadeOut(); 
 
     var name = $("[name=name]").val()
     var password = $("[name=password]").val()
     var district = $("[name=district]").val()
 
-    console.log({ name, password, district })
-    //post event 
-    $.post("/auth/signup", { name, password })
-      .then(function (data) {
-        console.log(data)
+    console.log({name, password, district})
+
+//post event 
+ $.post("/auth/signup", {name, password})
+ .then(function(data) {
+        console.log(data)        
+  
         // Clear the form when submitting
         $("#TODO:Name ID").val("");
         $("TODO: password ID").val("");
