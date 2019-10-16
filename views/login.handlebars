@@ -1,11 +1,32 @@
+{{!-- <div class="seapoll"></div> --}}
+<div class="bodi">
 
-    <input type="text" name = "name" placeholder="Username">
-    <input type="password" name = "password" placeholder="password" >
-    <input type="text" name = "district" placeholder="district">
-    <button class="signup">Sign Up</button>
-    <button class="login" >Login</button>
+    <form class="text-center border border-light p-5 signBody yoda" action="#!">
+      <p class="h4 mb-4">Sign in</p>
 
-<a href="/auth/signup">First time? sign up here!</a>
+      <!-- Email -->
+      <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" />
+
+      <!-- Password -->
+      <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" />
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember" />
+            <label class="custom-control-label" for="defaultLoginFormRemember">Remember
+              me</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign in button -->
+      <button class="btn btn-info btn-block my-4 signIn" type="submit">
+        Sign in
+      </button>
+    </form>
+  </div>  
 
 <script>
 //user login events 
@@ -32,7 +53,7 @@
         $("TODO: password ID").val("");
 
       });
-}); 
+  });
 
 //user signup events
 //onclick event for signup button
@@ -57,43 +78,6 @@
         $("TODO: password ID").val("");
 
       });
-}); 
+  });
 
-      </script>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>SEAPOLL</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="/public/css/styles.css" media="screen" title="no title">
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </head>
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark unique-color">
-      <a class="navbar-brand" href="#">
-          <img src="./assets/vote.png" height="35" alt="mdb logo">
-        </a>
-    </nav>
-<body class="yolo">
-  <div>
-  
-  </div>
-  </body>
-  <footer class="page-footer font-small unique-color fixed-bottom">
-
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      </div>
-      <!-- Copyright -->
-    
-    </footer>
-</html>
-
-
+</script>
