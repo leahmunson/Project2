@@ -4,7 +4,7 @@ var db = require("../models");
 var bcrypt = require("bcrypt");
 
 //get route for logged in users homepage, if logged in will let you in, otherwise will fail
-router.get('TODO:/secret',function(req,res){
+router.get('/secret',function(req,res){
     if(req.session.user) {
         res.render('securepage',req.session.user);
     }else {
