@@ -218,8 +218,13 @@ app.get("/api/election", function (req, res) {
 })
 
 
+
+
+
+
+
 // Campaign Videos
-app.get("api/electionvids", function (req, res) {
+app.get("/api/campaignVids", function (req, res) {
   data = [];
   var ctr = 0
 
@@ -228,11 +233,15 @@ app.get("api/electionvids", function (req, res) {
   axios.get(e)
   .then(response =>{
     const $ = cheerio.load(response.data);
-   $('#episodeCollection > div.slickCarousel.slick-initialized.slick-slider > div > div').each((i, elem)=>{
+   $('#episodeCollection > div.slickCarousel.slick-initialized.slick-slider > div > div > div:nth-child(1)').each((i, elem)=>{
        data.push({
-          Council1: $('div > div > div:nth-child(1)',$(elem).html()).children().eq(0).text(),
-          // Candidates:$('div > div > div:nth-child(1)',$(elem).html()).text(),
-       
+          //  District: $('p',$(elem).html()).children().eq(0).text(),
+          //  DistrictName: $('p',$(elem).html()).children().eq(2).text(),
+          //  Term: $('p',$(elem).html()).children().eq(3).text(),
+          //  Incumbent: $('p',$(elem).html()).children().eq(5).text(),
+          //  CampaignTitle: $('p',$(elem).html()).children().eq(8).text(),
+          //  Name1: $('p',$(elem).html()).children().eq(10).text(),
+          //  Name2: $('p',$(elem).html()).children().eq(12).text()
        })
    })
    callback();
@@ -244,7 +253,6 @@ app.get("api/electionvids", function (req, res) {
   res.json(data)
 })
 })
-
 
 
 
