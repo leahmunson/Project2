@@ -18,29 +18,6 @@
 </div>
 
 <script>
-  //user log in
-  //onclick event for login button
-  $(".login").on("click", function (event) {
-    event.preventDefault();
-    //form dissapears once submit button is clicked
-    $("<form>").fadeOut();
-
-    var name = $("[name=name]").val()
-    var password = $("[name=password]").val()
-    //var district = $("[name=district]").val()
-
-    console.log({ name, password })
-    //post event 
-    $.post("/auth/login", { name, password })
-      .then(function (data) {
-        console.log(data)
-
-        // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
-
-      });
-  });
 
   //user signup
   //onclick event for signup button
@@ -49,19 +26,19 @@
     //form dissapears once submit button is clicked
     $("<form>").fadeOut();
 
-    var name = $("[name=name]").val()
+    var email = $("[name=email]").val()
     var password = $("[name=password]").val()
     var district = $("[name=district]").val()
 
-    console.log({ name, password, district })
+    console.log({ email, password, district })
     //post event 
-    $.post("/auth/signup", { name, password })
+    $.post("/auth/signup", { email, password })
       .then(function (data) {
         console.log(data)
         // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
-
+        $("#defaultSignupFormEmail").val("");
+        $("#defaultSignupFormPassword").val("");
+        $("TODO:district").val("");
       });
   });
 
