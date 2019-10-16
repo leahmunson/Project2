@@ -37,7 +37,7 @@ var electionVideos= [
 /*C5*/ 'http://www.seattlechannel.org/2019-seattle-council-d5',
 /*C6*/ 'http://www.seattlechannel.org/2019-seattle-council-d6',
 /*C7*/ 'http://www.seattlechannel.org/2019-seattle-council-d7'
-]
+];
 
 module.exports = function(app) {
     // Seattle Elected Officials Page
@@ -161,11 +161,11 @@ module.exports = function(app) {
         })
 
 // Campaign Council1
-// app.get("/api/campaign/:id", function (req, res) {
-//   if(!req.session.user){
-//     res.redirect('/auth/login')
-//   }
-//   else {
+app.get("/api/campaign/", function (req, res) {
+  if(!req.session.user){
+    res.redirect('/auth/login')
+  }
+  else {
 
   data = [];
   var ctr = 0
@@ -228,8 +228,9 @@ app.get("/api/election", function (req, res) {
 
 
 
-// // Campaign Videos
-// app.get("/api/campaignVids", function (req, res) {
+
+// Campaign Videos
+// app.get("api/electionvids", function (req, res) {
 //   data = [];
 //   var ctr = 0
 
@@ -238,7 +239,7 @@ app.get("/api/election", function (req, res) {
 //   axios.get(e)
 //   .then(response =>{
 //     const $ = cheerio.load(response.data);
-//    $('#episodeCollection > div.slickCarousel.slick-initialized.slick-slider > div > div > div:nth-child(1)').each((i, elem)=>{
+//    $('#episodeCollection').each((i, elem)=>{
 //        data.push({
 //           //  District: $('p',$(elem).html()).children().eq(0).text(),
 //           //  DistrictName: $('p',$(elem).html()).children().eq(2).text(),
@@ -266,5 +267,5 @@ app.get("/api/election", function (req, res) {
 
 
 
-
- 
+}
+)}
