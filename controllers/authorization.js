@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../models');
 var bcrypt = require('bcrypt');
 
-//get route for secret homepage, if logged in will elt you in, otherwise will fail
+//get route for logged in users homepage, if logged in will let you in, otherwise will fail
 router.get('/secret',function(req,res){
     if(req.session.user) {
         res.render('securepage',req.session.user);
@@ -19,13 +19,13 @@ router.get('/secret',function(req,res){
 //     })
 // })
 
-//loads main page which contains the signup/login modals
-router.get('/main',function(req,res){
-    res.render('main');
+//loads signup form
+router.get('/signup',function(req,res){
+    res.render('signup');
 })
 
 //creates new instance of user
-router.post('/main',function(req,res){
+router.post('/signup',function(req,res){
     console.log(req.body)
     db.User.create({
         name:req.body.name,
