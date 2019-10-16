@@ -23,11 +23,13 @@
                 height: 100%;
             }
 
+            /* TODO: ------ CHANGES THE WIDTH AND HEIGHT OF THE MAP----- */
             /* Optional: Makes the sample page fill the window. */
+           
             html,
             body {
                 height: 80%;
-                width: 55%;
+                width: 70%;
                 margin: 0 auto;
                 padding: 0;
             }
@@ -44,39 +46,397 @@
                     zoom: 10.4
                 });
 
+                // can I pull this info and put it into an info box
+                // attach the var address1 to the info boxes
                 var marker = new google.maps.Marker({
-                    position: {lat: 47.66982, lng: -122.38476},
+                    position: { lat: 47.66982, lng: -122.38476 },
                     map: map,
-                    title: 'Ballard library!',
-                    markerLabel: "This is my marker label"
+                    title: 'Ballard library',
                 });
-                var marker = new google.maps.Marker({
-                    position: {lat: 47.65028, lng: -122.36156},
+                var contentString = "<strong>Ballard library</strong> <br> \n5614 22nd Ave NW, Seattle, WA 98107\n";
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                marker.addListener('click', function () {
+                    infowindow.open(map, marker);
+                });
+                // =================
+                var marker2 = new google.maps.Marker({
+                    position: { lat: 47.65028, lng: -122.36156 },
                     map: map,
-                    title: '!',
-                    markerLabel: "This is my marker label"
+                    title: 'Seattle Pacific University Bookstore',
                 });
-                // var marker = new google.maps.Marker({
-                //     position: {lat: , lng: },
-                //     map: map,
-                //     title: '!',
-                   
-                // });
-                // var marker = new google.maps.Marker({
-                //     position: {lat: , lng: },
-                //     map: map,
-                //     title: '!'
-                // });
-                // var marker = new google.maps.Marker({
-                //     position: {lat: , lng: },
-                //     map: map,
-                //     title: '!'
-                // });
-                // var marker = new google.maps.Marker({
-                //     position: {lat: , lng: },
-                //     map: map,
-                //     title: '!'
-                // });
+                var contentString2 = "<strong>Seattle Pacific University Bookstore</strong> <br> \n310 W Bertona Street Seattle, WA 98119\n";
+                var infowindow2 = new google.maps.InfoWindow({
+                    content: contentString2
+                });
+                marker2.addListener('click', function () {
+                    infowindow2.open(map, marker2);
+                });
+                // =================
+                var marker3 = new google.maps.Marker({
+                    position: { lat: 47.633047, lng: -122.396692 },
+                    map: map,
+                    title: 'Magnolia Park',
+                });
+                var contentString3 = "<strong>Magnolia Park</strong> <br> \n1461 Magnolia Boulevard West Seattle, WA 98199\n";
+                var infowindow3 = new google.maps.InfoWindow({
+                    content: contentString3
+                });
+                marker3.addListener('click', function () {
+                    infowindow3.open(map, marker3);
+                });
+                // =================
+                var marker4 = new google.maps.Marker({
+                    position: { lat: 47.64693, lng: -122.33366 },
+                    map: map,
+                    title: 'Waterway 19 Park (next to Gas Works Park)'
+                });
+                var contentString4 = "<strong>Waterway 19 Park</strong> (next to Gas Works Park <br> \n2119 N Northlake Way Seattle, WA 98103\n";
+                var infowindow4 = new google.maps.InfoWindow({
+                    content: contentString4
+                });
+                marker4.addListener('click', function () {
+                    infowindow4.open(map, marker4);
+                });
+                // =================
+                var marker5 = new google.maps.Marker({
+                    position: { lat: 47.62151, lng: -122.33719 },
+                    map: map,
+                    title: 'South Lake Union'
+                });
+                var contentString5 = "<strong>South Lake Union</strong> <br> \n310 Terry Ave N Seattle, WA 98109\n";
+                var infowindow5 = new google.maps.InfoWindow({
+                    content: contentString5
+                });
+                marker5.addListener('click', function () {
+                    infowindow5.open(map, marker5);
+                });
+                // =================
+                var marker6 = new google.maps.Marker({
+                    position: { lat: 47.61689, lng: 122.32082 },
+                    map: map,
+                    title: 'Seattle Central College'
+                });
+                var contentString6 = "<strong>Seattle Central College</strong> <br> \nBroadway-Edison Building (northeast corner) 1701 Broadway Seattle, WA 98122\n";
+                var infowindow6 = new google.maps.InfoWindow({
+                    content: contentString6
+                });
+                marker6.addListener('click', function () {
+                    infowindow6.open(map, marker6);
+                });
+                // =================
+                var marker7 = new google.maps.Marker({
+                    position: { lat: 47.6027, lng: -122.32979 },
+                    map: map,
+                    title: 'King County Administration Building'
+                });
+                var contentString7 = "<strong>King County Administration Building</strong> <br> \n500 4th Avenue Seattle, WA 98104\n";
+                var infowindow7 = new google.maps.InfoWindow({
+                    content: contentString7
+                });
+                marker7.addListener('click', function () {
+                    infowindow7.open(map, marker7);
+                });
+                // =================
+                var marker8 = new google.maps.Marker({
+                    position: { lat: 47.59677, lng: -122.32635 },
+                    map: map,
+                    title: 'Uwajimaya'
+                });
+                var contentString8 = "<strong>Uwajimaya</strong> <br> \n619 6th Avenue South Seattle, WA 98104\n";
+                var infowindow8 = new google.maps.InfoWindow({
+                    content: contentString8
+                });
+                marker8.addListener('click', function () {
+                    infowindow8.open(map, marker8);
+                });
+                // =================
+                var marker9 = new google.maps.Marker({
+                    position: { lat: 47.60801, lng: -122.30223 },
+                    map: map,
+                    title: 'Garfield Community Center'
+                });
+                var contentString9 = "<strong>Garfield Community Center</strong> <br> \n2323 E Cherry Street Seattle, WA 98122\n";
+                var infowindow9 = new google.maps.InfoWindow({
+                    content: contentString9
+                });
+                marker9.addListener('click', function () {
+                    infowindow9.open(map, marker9);
+                });
+                // =================
+                var marker10 = new google.maps.Marker({
+                    position: { lat: 47.57834, lng: -122.31133 },
+                    map: map,
+                    title: 'Beacon Hill Library'
+                });
+                var contentString10 = "<strong>Beacon Hill Library</strong> <br> \n2821 Beacon Avenue South Seattle, WA 98144\n";
+                var infowindow10 = new google.maps.InfoWindow({
+                    content: contentString10
+                });
+                marker10.addListener('click', function () {
+                    infowindow10.open(map, marker10);
+                });
+                // =================
+                var marker11 = new google.maps.Marker({
+                    position: { lat: 47.56113, lng: -122.38814 },
+                    map: map,
+                    title: 'Alaska Junction'
+                });
+                var contentString11 = "<strong>Alaska Junction</strong> <br> \nCorner of SW Alaska Street and 44th Avenue SW Seattle, WA 98116\n";
+                var infowindow11 = new google.maps.InfoWindow({
+                    content: contentString11
+                });
+                marker11.addListener('click', function () {
+                    infowindow11.open(map, marker11);
+                });
+                // =================
+                var marker12 = new google.maps.Marker({
+                    position: { lat: 47.54833, lng: -122.37608 },
+                    map: map,
+                    title: 'High Point Library'
+                });
+                var contentString12 = "<strong>High Point Library</strong> <br> \n3411 SW Raymond Street Seattle, WA 98126\n";
+                var infowindow12 = new google.maps.InfoWindow({
+                    content: contentString12
+                });
+                marker12.addListener('click', function () {
+                    infowindow12.open(map, marker12);
+                });
+                // =================
+                var marker13 = new google.maps.Marker({
+                    position: { lat: 47.50713, lng: -122.35327 },
+                    map: map,
+                    title: 'White Center Library'
+                });
+                var contentString13 = "<strong>White Center Library</strong> <br> \n 1409 SW 107th Street Seattle, WA 98146\n";
+                var infowindow13 = new google.maps.InfoWindow({
+                    content: contentString13
+                });
+                marker13.addListener('click', function () {
+                    infowindow13.open(map, marker13);
+                });
+                // =================
+                var marker14 = new google.maps.Marker({
+                    position: { lat: 47.52632, lng: -122.32294 },
+                    map: map,
+                    title: 'South Park Library'
+                });
+                var contentString14 = "<strong>South Park Library</strong> <br> \n8604 8th Avenue S Seattle, WA 98108\n";
+                var infowindow14 = new google.maps.InfoWindow({
+                    content: contentString14
+                });
+                marker14.addListener('click', function () {
+                    infowindow14.open(map, marker14);
+                });
+                // =================
+                var marker15 = new google.maps.Marker({
+                    position: { lat: 47.49523, lng: -122.30759 },
+                    map: map,
+                    title: 'Boulevard Park Library'
+                });
+                var contentString15 = "<strong>Boulevard Park Library</strong> <br> \n12015 Roseberg Avenue South Seattle, WA 98168\n";
+                var infowindow15 = new google.maps.InfoWindow({
+                    content: contentString15
+                });
+                marker15.addListener('click', function () {
+                    infowindow15.open(map, marker15);
+                });
+                // =================
+                var marker16 = new google.maps.Marker({
+                    position: { lat: 47.49096, lng: -122.27999 },
+                    map: map,
+                    title: 'Tukwila Community Center'
+                });
+                var contentString16 = "<strong>Tukwila Community Center</strong> <br> \n12424 42nd Avenue South Tukwila, WA 98168\n";
+                var infowindow16 = new google.maps.InfoWindow({
+                    content: contentString16
+                });
+                marker16.addListener('click', function () {
+                    infowindow16.open(map, marker16);
+                });
+                // =================
+                var marker17 = new google.maps.Marker({
+                    position: { lat: 47.49057, lng: -122.2383 },
+                    map: map,
+                    title: 'Skyway Library'
+                });
+                var contentString17 = "<strong>Skyway Library</strong> <br> \n12601 76th Avenue South Seattle, WA 98178\n";
+                var infowindow17 = new google.maps.InfoWindow({
+                    content: contentString17
+                });
+                marker17.addListener('click', function () {
+                    infowindow17.open(map, marker17);
+                });
+                // =================
+                var marker18 = new google.maps.Marker({
+                    position: { lat: 47.52448, lng: -122.26999 },
+                    map: map,
+                    title: 'Rainier Beach Community Center'
+                });
+                var contentString18 = "<strong>Rainier Beach Community Center</strong> <br> \n8825 Rainier Avenue S Seattle, WA 98118\n";
+                var infowindow18 = new google.maps.InfoWindow({
+                    content: contentString18
+                });
+                marker18.addListener('click', function () {
+                    infowindow18.open(map, marker18);
+                });
+                // =================
+                var marker19 = new google.maps.Marker({
+                    position: { lat: 47.53954, lng: -122.29054 },
+                    map: map,
+                    title: 'NewHolly Neighborhood Campus'
+                });
+                var contentString19 = "<strong>NewHolly Neighborhood Campus</strong> <br> \n7054 32nd Avenue South Seattle, WA 98118\n";
+                var infowindow19 = new google.maps.InfoWindow({
+                    content: contentString19
+                });
+                marker19.addListener('click', function () {
+                    infowindow19.open(map, marker19);
+                });
+                // =================
+                var marker20 = new google.maps.Marker({
+                    position: { lat: 47.56152, lng: -122.28492 },
+                    map: map,
+                    title: 'Rainier Community Center'
+                });
+                var contentString20 = "<strong>Rainier Community Center</strong> <br> \n460 38th Avenue South Seattle, WA 98118\n";
+                var infowindow20 = new google.maps.InfoWindow({
+                    content: contentString20
+                });
+                marker20.addListener('click', function () {
+                    infowindow20.open(map, marker20);
+                });
+                // =================
+                var marker21 = new google.maps.Marker({
+                    position: { lat: 47.6822, lng: -122.25958 },
+                    map: map,
+                    title: 'Magnuson Park/The Bridge'
+                });
+                var contentString21 = "<strong>Magnuson Park/The Bridge</strong> <br> \n6344 NE 74th Street Seattle, WA 98115\n";
+                var infowindow21 = new google.maps.InfoWindow({
+                    content: contentString21
+                });
+                marker21.addListener('click', function () {
+                    infowindow21.open(map, marker21);
+                });
+                // =================
+                var marker22 = new google.maps.Marker({
+                    position: { lat: 47.69861, lng: -122.33497 },
+                    map: map,
+                    title: 'North Seattle College'
+                });
+                var contentString22 = "<strong>North Seattle College</strong> <br> \n(south visitor lot access from N 95th St) 960 College Way N Seattle, WA 98103\n";
+                var infowindow22 = new google.maps.InfoWindow({
+                    content: contentString22
+                });
+                marker22.addListener('click', function () {
+                    infowindow22.open(map, marker22);
+                });
+                // =================
+                var marker23 = new google.maps.Marker({
+                    position: { lat: 47.72301, lng: -122.35556 },
+                    map: map,
+                    title: 'Broadview Library'
+                });
+                var contentString23 = "<strong>Broadview Library</strong> <br> \n12755 Greenwood Avenue North Seattle, WA 98133\n";
+                var infowindow23 = new google.maps.InfoWindow({
+                    content: contentString23
+                });
+                marker23.addListener('click', function () {
+                    infowindow23.open(map, marker23);
+                });
+                // =================
+                var marker24 = new google.maps.Marker({
+                    position: { lat: 47.7198, lng: -122.29781 },
+                    map: map,
+                    title: 'Lake City Library'
+                });
+                var contentString24 = "<strong>Lake City Library</strong> <br> \n12501 28th Avenue NE Seattle, WA 98125\n";
+                var infowindow24 = new google.maps.InfoWindow({
+                    content: contentString24
+                });
+                marker24.addListener('click', function () {
+                    infowindow24.open(map, marker24);
+                });
+                // =================
+                var marker25 = new google.maps.Marker({
+                    position: { lat: 47.75588, lng: -122.3247 },
+                    map: map,
+                    title: 'Shoreline Library'
+                });
+                var contentString25 = "<strong>Shoreline Library</strong> <br> \n345 NE 175th Street Shoreline, WA 98155\n";
+                var infowindow25 = new google.maps.InfoWindow({
+                    content: contentString25
+                });
+                marker25.addListener('click', function () {
+                    infowindow25.open(map, marker25);
+                });
+                // =================
+                var marker26 = new google.maps.Marker({
+                    position: { lat: 47.76671, lng: -122.34603 },
+                    map: map,
+                    title: 'Shoreline Park & Ride'
+                });
+                var contentString26 = "<strong>Shoreline Park & Ride</strong> <br> \n18821 Aurora Avenue N Shoreline, WA 98133\n";
+                var infowindow26 = new google.maps.InfoWindow({
+                    content: contentString26
+                });
+                marker26.addListener('click', function () {
+                    infowindow26.open(map, marker26);
+                });
+                // =================
+                var marker27 = new google.maps.Marker({
+                    position: { lat: 47.75414, lng: -122.27726 },
+                    map: map,
+                    title: 'Lake Forest Park City Hall'
+                });
+                var contentString27 = "<strong>Lake Forest Park City Hall</strong> <br> \n17425 Ballinger Way NE Lake Forest Park, WA 98155\n";
+                var infowindow27 = new google.maps.InfoWindow({
+                    content: contentString27
+                });
+                marker27.addListener('click', function () {
+                    infowindow27.open(map, marker27);
+                });
+                // =================
+                var marker28 = new google.maps.Marker({
+                    position: { lat: 47.67885, lng: -122.20715 },
+                    map: map,
+                    title: 'Kirkland City Hall'
+                });
+                var contentString28 = "<strong>Kirkland City Hall</strong> <br> \n123 5th Avenue Kirkland, WA 98033\n";
+                var infowindow28 = new google.maps.InfoWindow({
+                    content: contentString28
+                });
+                marker28.addListener('click', function () {
+                    infowindow28.open(map, marker28);
+                });
+                // =================
+                var marker29 = new google.maps.Marker({
+                    position: { lat: 47.6201, lng: -122.19365 },
+                    map: map,
+                    title: 'Bellevue Library'
+                });
+                var contentString29 = "<strong>Bellevue Library</strong> <br> \n1111 110th Avenue NE Bellevue, WA 9804\n";
+                var infowindow29 = new google.maps.InfoWindow({
+                    content: contentString29
+                });
+                marker29.addListener('click', function () {
+                    infowindow29.open(map, marker29);
+                });
+                // =================
+                var marker30 = new google.maps.Marker({
+                    position: { lat: 47.58907, lng: -122.22737 },
+                    map: map,
+                    title: 'Mercer Island Community & Event Center'
+                });
+                var contentString30 = "<Mercer Island Community & Event Center</strong> <br> \n8236 SE 24th Street Mercer Island, WA 98040\n";
+                var infowindow30 = new google.maps.InfoWindow({
+                    content: contentString30
+                });
+                marker30.addListener('click', function () {
+                    infowindow30.open(map, marker30);
+                });
             }
         </script>
         <script
