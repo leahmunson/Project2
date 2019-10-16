@@ -74,4 +74,8 @@ router.get("/readsessions", function(req, res) {
   res.json(req.session);
 });
 
+router.get("/elections", function(req, res) {
+  res.render("elections");
+});
+
 module.exports = router;
