@@ -38,14 +38,16 @@
     //$("<form>").fadeOut(); 
 
     //store variables
-    var email = $("[name=email]").val()
-    var password = $("[name=password]").val()
+    var email = $("#defaultLoginFormEmail").val()
+    var password = $("#defaultLoginFormPassword").val()
     console.log({email, password})
 
 //post event for login - sending back to server
  $.post("/auth/login", {email, password})
  .then(function(data) {
-        console.log(data)          
+        console.log(data) 
+        var userDistrict = data.user.district;
+        window.location.href="/district/"+ userDistrict      
 
         // Clear the form when submitting
         $("#defaultLoginFormEmail").val("");

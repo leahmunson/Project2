@@ -9,7 +9,7 @@ router.get('TODO:/secret',function(req,res){
         res.render('securepage',req.session.user);
     }else {
         res.send('Please login.')
-    }nod
+    }
 })
 
 //loads signup form
@@ -21,13 +21,15 @@ router.get("/signup", function(req, res) {
 router.post("/signup", function(req, res) {
   console.log(req.body);
   db.User.create({
-    name: req.body.name,
+    email: req.body.email,
     password: req.body.password,
     district: req.body.district
   }).then(function(newUser) {
     console.log(newUser);
-    res.json(newUser);
-  });
+    // res.json(newUser);
+    res.json(true)
+
+  }).catch(err=>console.log(err))
 });
 
 //loads login form
@@ -37,11 +39,15 @@ router.get("/login", function(req, res) {
 
 //route for user login
 router.post("/login", function(req, res) {
+  console.log(req.body);
+  
   db.User.findOne({
     where: {
-      name: req.body.name
+      email: req.body.email
     }
   }).then(function(dbUser) {
+    console.log(dbUser);
+    
     //compares password send in req.body to one in database, will return true if matched.
     if (bcrypt.compareSync(req.body.password, dbUser.password)) {
       //create new session property "user", set equal to logged in user
@@ -52,7 +58,7 @@ router.post("/login", function(req, res) {
       req.session.error = "auth failed";
     }
     res.json(req.session);
-  });
+  }).catch(err=>console.log(err))
 });
 
 router.get("/logout", function(req, res) {
