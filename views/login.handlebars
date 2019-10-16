@@ -2,7 +2,7 @@
 <div class="bodi">
 
     <form class="text-center border border-light p-5 signBody yoda" action="#!">
-      <p class="h4 mb-4">Sign in</p>
+      <p class="h4 mb-4">Welcome Back</p>
 
       <!-- Email -->
       <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" />
@@ -20,9 +20,7 @@
           </div>
         </div>
       </div>
-
-      <!-- Sign in button -->
-      <button class="btn btn-info btn-block my-4 signIn" type="submit">
+      <button class="btn btn-info btn-block my-4 btn-unique" type="submit">
         Sign in
       </button>
     </form>
@@ -38,14 +36,16 @@
     //$("<form>").fadeOut(); 
 
     //store variables
-    var email = $("[name=email]").val()
-    var password = $("[name=password]").val()
+    var email = $("#defaultLoginFormEmail").val()
+    var password = $("#defaultLoginFormPassword").val()
     console.log({email, password})
 
 //post event for login - sending back to server
  $.post("/auth/login", {email, password})
  .then(function(data) {
-        console.log(data)          
+        console.log(data) 
+        var userDistrict = data.user.district;
+        window.location.href="/district/"+ userDistrict      
 
         // Clear the form when submitting
         $("#defaultLoginFormEmail").val("");
