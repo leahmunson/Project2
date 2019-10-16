@@ -5,10 +5,23 @@
     <p class="h4 mb-4">Sign up</p>
 
     <!-- Email -->
-    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" />
+    <input type="email" id="defaultSignupFormEmail" class="form-control mb-4" placeholder="E-mail" />
 
     <!-- Password -->
-    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" />
+    <input type="password" id="defaultSignupFormPassword" class="form-control mb-4" placeholder="Password" />
+
+ <!-- District -->
+
+    <select type= "district" id = "defaultSignupFormDistrict" class="form-control mb-4" placeholder="Select Your District">
+      <option value = "placeholder">Select Your District</option>
+      <option value = "1">District 1</option>
+      <option value = "2">District 2</option>
+      <option value = "3">District 3</option>
+      <option value = "4">District 4</option>
+      <option value = "5">District 5</option>
+      <option value = "6">District 6</option>
+      <option value = "7">District 7</option>
+    </select>
 
     <!-- Sign in button -->
     <div>
@@ -20,29 +33,6 @@
 </div>
 
 <script>
-  //user log in
-  //onclick event for login button
-  $(".login").on("click", function (event) {
-    event.preventDefault();
-    //form dissapears once submit button is clicked
-    $("<form>").fadeOut();
-
-    var name = $("[name=name]").val()
-    var password = $("[name=password]").val()
-    //var district = $("[name=district]").val()
-
-    console.log({ name, password })
-    //post event 
-    $.post("/auth/login", { name, password })
-      .then(function (data) {
-        console.log(data)
-
-        // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
-
-      });
-  });
 
   //user signup
   //onclick event for signup button
@@ -51,19 +41,19 @@
     //form dissapears once submit button is clicked
     $("<form>").fadeOut();
 
-    var name = $("[name=name]").val()
+    var email = $("[name=email]").val()
     var password = $("[name=password]").val()
     var district = $("[name=district]").val()
 
-    console.log({ name, password, district })
+    console.log({ email, password, district })
     //post event 
-    $.post("/auth/signup", { name, password })
+    $.post("/auth/signup", { email, password })
       .then(function (data) {
         console.log(data)
         // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
-
+        $("#defaultSignupFormEmail").val("");
+        $("#defaultSignupFormPassword").val("");
+        $("TODO:district").val("");
       });
   });
 
