@@ -7,7 +7,7 @@ api/terms
 api/issues
 api/council
 api/campaign
-api/elections
+api/election
 api/electionvids
 
 needs
