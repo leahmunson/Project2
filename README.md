@@ -1,4 +1,5 @@
 # Project2
+
 <!-- In order to meet the Employer Competitive standards and be ready to show your application to employers, the README.md file should meet the following criteria:
 
 
@@ -25,6 +26,3 @@ Handlbars, Bootstrap.
 # Instructions
 
 # Deployed Link
-
-
-

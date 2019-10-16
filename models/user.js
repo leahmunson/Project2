@@ -14,7 +14,12 @@ module.exports = function(sequelize, DataTypes) {
             validate:{
                 len:[8]
             }
+        },
+        district: {
+            type:DataTypes.STRING,
+            // allowNull:false,
         }
+
     });
 
     User.associate = function(models) {
