@@ -31,51 +31,25 @@
 <script>
 //user login events 
 //onclick event for login button
-  $("TODO:.login").on("click", function(event) {
+  $(".signIn").on("click", function(event) {
     event.preventDefault();
 
     //form dissapears once submit button is clicked
     //$("<form>").fadeOut(); 
 
     //store variables
-    var name = $("[name=name]").val()
+    var email = $("[name=email]").val()
     var password = $("[name=password]").val()
-    //var district = $("[name=district]").val()
-    console.log({name, password})
+    console.log({email, password})
 
 //post event for login - sending back to server
- $.post("/auth/login", {name, password})
+ $.post("/auth/login", {email, password})
  .then(function(data) {
         console.log(data)          
 
         // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
-
-      });
-  });
-
-//user signup events
-//onclick event for signup button
-  $("TODO:.signup").on("click", function(event) {
-    event.preventDefault();
-    //form dissapears once submit button is clicked
-    //$("<form>").fadeOut(); 
-
-    var name = $("[name=name]").val()
-    var password = $("[name=password]").val()
-    var district = $("[name=district]").val()
-
-    console.log({name, password, district})
-
-//post event 
- $.post("/auth/signup", {name, password})
- .then(function(data) {
-        console.log(data)        
-  
-        // Clear the form when submitting
-        $("#TODO:Name ID").val("");
-        $("TODO: password ID").val("");
+        $("#defaultLoginFormEmail").val("");
+        $("#defaultLoginFormPassword").val("");
 
       });
   });
