@@ -13,9 +13,6 @@ api/electionvids
 needs
 photos
 funding
-
-
-
 */
 var officialsurl = 'http://www.seattle.gov/elected-officials';
 var wikimayorsurl = 'https://en.wikipedia.org/wiki/Mayor_of_Seattle';
@@ -164,7 +161,12 @@ module.exports = function(app) {
         })
 
 // Campaign Council1
-app.get("/api/campaign", function (req, res) {
+// app.get("/api/campaign/:id", function (req, res) {
+//   if(!req.session.user){
+//     res.redirect('/auth/login')
+//   }
+//   else {
+
   data = [];
   var ctr = 0
 
@@ -192,7 +194,10 @@ app.get("/api/campaign", function (req, res) {
 }).then(foo => {
   res.json(data)
 })
-})
+
+
+
+
 
 //General Election
 app.get("/api/election", function (req, res) {
@@ -223,43 +228,43 @@ app.get("/api/election", function (req, res) {
 
 
 
-// Campaign Videos
-app.get("/api/campaignVids", function (req, res) {
-  data = [];
-  var ctr = 0
+// // Campaign Videos
+// app.get("/api/campaignVids", function (req, res) {
+//   data = [];
+//   var ctr = 0
 
-  async.eachSeries(electionVideos, function(e, callback){
-    console.log(e)
-  axios.get(e)
-  .then(response =>{
-    const $ = cheerio.load(response.data);
-   $('#episodeCollection > div.slickCarousel.slick-initialized.slick-slider > div > div > div:nth-child(1)').each((i, elem)=>{
-       data.push({
-          //  District: $('p',$(elem).html()).children().eq(0).text(),
-          //  DistrictName: $('p',$(elem).html()).children().eq(2).text(),
-          //  Term: $('p',$(elem).html()).children().eq(3).text(),
-          //  Incumbent: $('p',$(elem).html()).children().eq(5).text(),
-          //  CampaignTitle: $('p',$(elem).html()).children().eq(8).text(),
-          //  Name1: $('p',$(elem).html()).children().eq(10).text(),
-          //  Name2: $('p',$(elem).html()).children().eq(12).text()
-       })
-   })
-   callback();
-  })
-  .catch(error=> {
-    console.log(error);
-  })
-}).then(foo => {
-  res.json(data)
-})
-})
-
-
+//   async.eachSeries(electionVideos, function(e, callback){
+//     console.log(e)
+//   axios.get(e)
+//   .then(response =>{
+//     const $ = cheerio.load(response.data);
+//    $('#episodeCollection > div.slickCarousel.slick-initialized.slick-slider > div > div > div:nth-child(1)').each((i, elem)=>{
+//        data.push({
+//           //  District: $('p',$(elem).html()).children().eq(0).text(),
+//           //  DistrictName: $('p',$(elem).html()).children().eq(2).text(),
+//           //  Term: $('p',$(elem).html()).children().eq(3).text(),
+//           //  Incumbent: $('p',$(elem).html()).children().eq(5).text(),
+//           //  CampaignTitle: $('p',$(elem).html()).children().eq(8).text(),
+//           //  Name1: $('p',$(elem).html()).children().eq(10).text(),
+//           //  Name2: $('p',$(elem).html()).children().eq(12).text()
+//        })
+//    })
+//    callback();
+//   })
+//   .catch(error=> {
+//     console.log(error);
+//   })
+// }).then(foo => {
+//   res.json(data)
+// })
+// })
 
 
+}
 
 
- }
+
+
 
 
  
