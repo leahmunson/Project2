@@ -1,3 +1,6 @@
+.card-header{
+  color: white;
+}
 body{
   background-color:#353638 !important;
   margin-bottom: 5% !important;
@@ -28,7 +31,7 @@ body{
   display: flex !important;
    justify-content: space-between !important;
    flex-wrap: wrap !important;
-padding-top: 1%;
+/* padding-top: 1%; */
 }
 
 .card{
@@ -57,4 +60,26 @@ color: white;
 
 .studs{
   width: 50%;
+}
+
+.buff {
+  margin-top: 1%;
+}
+
+.strong {
+  margin-bottom: 1%;
+}
+
+.marginsCard{
+  margin-left:3% !important;
+  margin-right:3% !important;
+}
+
+.row{
+  width: 101%;
+}
+
+.panoo{
+  /* height:10% !important; */
+   width:100%;
 }
