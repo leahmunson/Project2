@@ -4,11 +4,13 @@
 body{
   background-color:#353638 !important;
   margin-bottom: 5% !important;
-  
-  
 }
+.yuup{
+  margin-bottom: 1%;
+}
+
 .seapoll{
-  background-image: url(/assets/Seattle_Kerry_Park_Skyline.jpg);
+  background-image: url(/assets/Seattle7.jpg);
   background-size:100% 95%;
   background-repeat: no-repeat;
   min-height: 39vh;
@@ -32,6 +34,8 @@ body{
    justify-content: space-between !important;
    flex-wrap: wrap !important;
 /* padding-top: 1%; */
+margin-bottom: 2%;
+
 }
 
 .card{
@@ -82,4 +86,11 @@ color: white;
 .panoo{
   /* height:10% !important; */
    width:100%;
+}
+
+.ree{
+  
+  height: 35vw !important;
+  width: 100%;
+  margin-bottom: 10% !important;
 }
