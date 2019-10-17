@@ -76,11 +76,19 @@ router.get("/readsessions", function(req, res) {
 });
 
 router.get("/elections", function(req, res) {
-  res.render("elections");
+  Promise.all([apiImplementation.doCampaign()]).then(data => {
+    res.render("elections", {
+      campaigns: data[0]
+    })
+  })
 });
 
 router.get("/issues", function(req, res) {
-  res.render("issues");
+  Promise.all([apiImplementation.doIssues()]).then(data => {
+    res.render("issues", {
+      issues: data[0]
+    });
+  })
 });
 router.get("/district", function(req, res) {
   res.render("district");

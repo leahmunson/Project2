@@ -4,6 +4,17 @@ var async = require('async');
 
 var meetCityCouncil ='http://www.seattle.gov/council/meet-the-council';
 var cityTerms ='https://www.seattle.gov/cityclerk/agendas-and-legislative-resources/terms-of-office-for-elected-officials';
+var issues ='https://www.seattle.gov/council/issues';
+
+var campaign = [/*C1 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=173&leftmenu=collapsed',
+/* C2*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=172&leftmenu=collapsed',
+/*C3 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=174&leftmenu=collapsed',
+/* C4*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=175&leftmenu=collapsed',
+/*C5*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=176&leftmenu=collapsed',
+/*C6*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=177&leftmenu=collapsed',
+/*C7*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=178&leftmenu=collapsed'
+];
+
 
 module.exports = {
   doCouncil: function doCouncil() {
@@ -118,5 +129,52 @@ module.exports = {
     .catch(error=> {
       console.log(error);
     })
-  }
+  },
+    doIssues: function doIssues() {
+      return axios.get(issues)
+          .then(response =>{
+            data = [];
+            const $ = cheerio.load(response.data);
+           $('.thumbnailExcerpt').each((i, elem)=>{
+               data.push({
+                IssueTitle: $('.titleDateContainer',$(elem).html()).text(),
+                IssueText: $('.titleExcerptText',$(elem).html()).text(),
+                Link: "https://www.seattle.gov/" +$('a',$(elem).html()).attr('href'),
+               })
+           })
+            return data //res.json(data)
+          })
+          .catch(error=> {
+            console.log(error);
+          })
+    },
+
+    doCampaign: function doCampaign() {
+      data = [];
+
+      return async.eachSeries(campaign, function(e, callback){
+        console.log(e)
+        axios.get(e)
+        .then(response =>{
+          const $ = cheerio.load(response.data);
+          $('#divChartMain > table > tbody > tr:nth-child(1) > td:nth-child(3)').each((i, elem)=>{
+            data.push({
+                District: $('p',$(elem).html()).children().eq(0).text(),
+                DistrictName: $('p',$(elem).html()).children().eq(2).text(),
+                Term: $('p',$(elem).html()).children().eq(3).text(),
+                Incumbent: $('p',$(elem).html()).children().eq(5).text(),
+                CampaignTitle: $('p',$(elem).html()).children().eq(8).text(),
+                Name1: $('p',$(elem).html()).children().eq(10).text(),
+                Name2: $('p',$(elem).html()).children().eq(12).text()
+            })
+          })
+          callback();
+        })
+        .catch(error=> {
+          console.log(error);
+        })
+      }).then(foo => {
+        return data//res.json(data)
+      })
+    }
 }
