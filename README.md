@@ -22,6 +22,7 @@ SeaPoll is a centralized, informative, data-driven website that compiles unbiase
 NPM Packages Used: 
 - Cheerio
 - Express
+- Axios
 
 Handlbars, Bootstrap.
 
