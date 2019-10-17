@@ -6,7 +6,7 @@ body{
 }
 .seapoll{
   background-image: url(/assets/Seattle_Kerry_Park_Skyline.jpg);
-  background-size:100% 350px;
+  background-size:100% 95%;
   background-repeat: no-repeat;
   min-height: 39vh;
 }
@@ -50,3 +50,7 @@ color: white;
 /* button{
   background-color:#353638 !important ;
 } */
+
+.stuff{
+  margin-left: 5px !important;
+}
