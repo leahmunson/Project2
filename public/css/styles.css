@@ -1,11 +1,15 @@
+.card-header{
+  color: white;
+}
 body{
   background-color:#353638 !important;
   margin-bottom: 5% !important;
   
+  
 }
 .seapoll{
   background-image: url(/assets/Seattle_Kerry_Park_Skyline.jpg);
-  background-size:100% 350px;
+  background-size:100% 95%;
   background-repeat: no-repeat;
   min-height: 39vh;
 }
@@ -27,7 +31,7 @@ body{
   display: flex !important;
    justify-content: space-between !important;
    flex-wrap: wrap !important;
-padding-top: 1%;
+/* padding-top: 1%; */
 }
 
 .card{
@@ -49,3 +53,33 @@ color: white;
 /* button{
   background-color:#353638 !important ;
 } */
+
+.stuff{
+  margin-left: 5px !important;
+}
+
+.studs{
+  width: 50%;
+}
+
+.buff {
+  margin-top: 1%;
+}
+
+.strong {
+  margin-bottom: 1%;
+}
+
+.marginsCard{
+  margin-left:3% !important;
+  margin-right:3% !important;
+}
+
+.row{
+  width: 101%;
+}
+
+.panoo{
+  /* height:10% !important; */
+   width:100%;
+}
