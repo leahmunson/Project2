@@ -18,16 +18,6 @@ funding
 var officialsurl = 'http://www.seattle.gov/elected-officials';
 var wikimayorsurl = 'https://en.wikipedia.org/wiki/Mayor_of_Seattle';
 
-
-var campaign = [/*C1 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=173&leftmenu=collapsed',
-/* C2*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=172&leftmenu=collapsed',
-/*C3 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=174&leftmenu=collapsed',
-/* C4*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=175&leftmenu=collapsed',
-/*C5*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=176&leftmenu=collapsed',
-/*C6*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=177&leftmenu=collapsed',
-/*C7*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=178&leftmenu=collapsed'
-];
-
 var election = 'https://ballotpedia.org/City_elections_in_Seattle,_Washington_(2019)';
 var electionVideos= [
 /*C1*/ 'http://www.seattlechannel.org/2019-seattle-council-d1',
@@ -101,35 +91,9 @@ app.get("/api/campaign/", function (req, res) {
     res.redirect('/auth/login')
   }
   else {
-
-  data = [];
-  var ctr = 0
-
-  async.eachSeries(campaign, function(e, callback){
-    console.log(e)
-  axios.get(e)
-  .then(response =>{
-    const $ = cheerio.load(response.data);
-   $('#divChartMain > table > tbody > tr:nth-child(1) > td:nth-child(3)').each((i, elem)=>{
-       data.push({
-           District: $('p',$(elem).html()).children().eq(0).text(),
-           DistrictName: $('p',$(elem).html()).children().eq(2).text(),
-           Term: $('p',$(elem).html()).children().eq(3).text(),
-           Incumbent: $('p',$(elem).html()).children().eq(5).text(),
-           CampaignTitle: $('p',$(elem).html()).children().eq(8).text(),
-           Name1: $('p',$(elem).html()).children().eq(10).text(),
-           Name2: $('p',$(elem).html()).children().eq(12).text()
-       })
-   })
-   callback();
-  })
-  .catch(error=> {
-    console.log(error);
-  })
-}).then(foo => {
-  res.json(data)
+    Promise.all([apiImplementation.doCampaign()]).then(data => {res.json(data[0])})
+  }
 })
-
 
 //General Election
 app.get("/api/election", function (req, res) {
@@ -153,14 +117,7 @@ app.get("/api/election", function (req, res) {
     console.log(error);
   })
 })
-
-
-
-
-
-
-
-
+}
 // Campaign Videos
 // app.get("api/electionvids", function (req, res) {
 //   data = [];
@@ -191,13 +148,3 @@ app.get("/api/election", function (req, res) {
 //   res.json(data)
 // })
 // })
-
-
-}
-
-
-
-
-
-}
-)}
