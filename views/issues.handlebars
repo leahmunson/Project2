@@ -1,0 +1,19 @@
+<div class="row"><img class="panoo" src="/assets/bay.jpg" alt="seattle" 
+    style="
+    height: 350px;"
+ ></div>
+<div class="container">
+    {{#each issues}}
+    <div class="col-sm">
+        <div class="card buff"  >
+            <h5 style="color:white" class="card-header h5 unique-color ">{{header1}}</h5>
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{this.Link}}">{{this.IssueTitle}}</a></h5>
+                <p class="card-text">{{this.IssueText}}</p>
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</div>

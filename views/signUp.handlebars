@@ -5,14 +5,14 @@
     <p class="h4 mb-4">Sign up</p>
 
     <!-- Email -->
-    <input type="email" id="defaultSignupFormEmail" class="form-control mb-4" placeholder="E-mail" />
+    <input type="email" id="SignupFormEmail" class="form-control mb-4" placeholder="E-mail" />
 
     <!-- Password -->
-    <input type="password" id="defaultSignupFormPassword" class="form-control mb-4" placeholder="Password" />
+    <input type="password" id="SignupFormPassword" class="form-control mb-4" placeholder="Password" />
 
  <!-- District -->
 
-    <select type= "district" id = "defaultSignupFormDistrict" class="form-control mb-4" placeholder="Select Your District">
+    <select type= "district" id = "SignupFormDistrict" class="form-control mb-4" placeholder="Select Your District">
       <option value = "placeholder">Select Your District</option>
       <option value = "1">District 1</option>
       <option value = "2">District 2</option>
@@ -24,9 +24,12 @@
     </select>
 
     <!-- Sign in button -->
-    <button class="btn btn-info btn-block my-4" type="submit">
+    <div>
+    <button class="btn btn-info btn-block my-4 btn-unique signUp" type="submit">
       Sign Up
     </button>
+   
+    </div>
   </form>
 </div>
 
@@ -34,25 +37,31 @@
 
   //user signup
   //onclick event for signup button
-  $(".signup").on("click", function (event) {
+  $(".signUp").on("click", function (event) {
     event.preventDefault();
     //form dissapears once submit button is clicked
     $("<form>").fadeOut();
 
-    var email = $("[name=email]").val()
-    var password = $("[name=password]").val()
-    var district = $("[name=district]").val()
+    var email = $("#SignupFormEmail").val()
+    var password = $("#SignupFormPassword" ).val()
+    var district = $("#SignupFormDistrict").val()
 
     console.log({ email, password, district })
     //post event 
-    $.post("/auth/signup", { email, password })
+    $.post("/auth/signup", { email, password, district })
       .then(function (data) {
         console.log(data)
+        if (data) {
+          window.location.href = "/auth/login"
+        }
+        else {
         // Clear the form when submitting
-        $("#defaultSignupFormEmail").val("");
-        $("#defaultSignupFormPassword").val("");
-        $("TODO:district").val("");
+        $("#SignupFormEmail").val("");
+        $("#SignupFormPassword").val("");
+        $("#SignupFormDistrict").val("");
+        }
       });
+      
   });
 
 </script>
