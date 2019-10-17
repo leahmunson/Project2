@@ -17,10 +17,12 @@ router.get('/:districtId',function(req,res){
                   res.render("1", {
                     district: districtId, 
                     council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                    terms: councilData[1][0].Council1
+                    terms: councilData[1][0].Council1,
+                    atLarge1: councilData[1][0].atLarge1,
+                    atLarge2: councilData[1][0].atLarge2
                   })
                 })
-                //TODO: connect with db, get all info on district 1, create handlebars object with the array that comes back
+                
                 
               break;
             case "2":
@@ -29,7 +31,9 @@ router.get('/:districtId',function(req,res){
                   res.render("1", {
                     district: districtId, 
                     council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                    terms: councilData[1][0].Council2
+                    terms: councilData[1][0].Council2,
+                    atLarge1: councilData[1][0].atLarge1,
+                    atLarge2: councilData[1][0].atLarge2
                   })
                 })
               break;
@@ -39,7 +43,9 @@ router.get('/:districtId',function(req,res){
                     res.render("1", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                      terms: councilData[1][0].Council3
+                      terms: councilData[1][0].Council3,
+                      atLarge1: councilData[1][0].atLarge1,
+                      atLarge2: councilData[1][0].atLarge2
                     })
                   })
               break;
@@ -49,7 +55,9 @@ router.get('/:districtId',function(req,res){
                     res.render("1", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                      terms: councilData[1][0].Council4
+                      terms: councilData[1][0].Council4,
+                      atLarge1: councilData[1][0].atLarge1,
+                      atLarge2: councilData[1][0].atLarge2
                     })
                   })
               break;
@@ -59,7 +67,9 @@ router.get('/:districtId',function(req,res){
                     res.render("1", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                      terms: councilData[1][0].Council5
+                      terms: councilData[1][0].Council5,
+                      atLarge1: councilData[1][0].atLarge1,
+                      atLarge2: councilData[1][0].atLarge2
                     })
                   })
               break;
@@ -69,7 +79,9 @@ router.get('/:districtId',function(req,res){
                     res.render("1", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                      terms: councilData[1][0].Council6
+                      terms: councilData[1][0].Council6,
+                      atLarge1: councilData[1][0].atLarge1,
+                      atLarge2: councilData[1][0].atLarge2
                     })
                   })
               break;
@@ -79,7 +91,10 @@ router.get('/:districtId',function(req,res){
                     res.render("1", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
-                      terms: councilData[1][0].Council7
+                      terms: councilData[1][0].Council7,
+                      atLarge1: councilData[1][0].atLarge1,
+                      atLarge2: councilData[1][0].atLarge2
+
                     })
                   })
               break;

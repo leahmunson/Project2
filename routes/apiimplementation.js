@@ -97,14 +97,14 @@ module.exports = {
                 termLength: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(1)',$(elem).html()).children().remove().end().text().trim().split(" ")[4],
                 termExpires: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(1)',$(elem).html()).children().remove().end().text().trim().split(" ")[8],
               },
-              Council8: {
+              atLarge1: {
                 position: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(2)',$(elem).html()).children().eq(0).text(),
                 name: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(2)',$(elem).html()).children().eq(2).text(),
                 elected: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(2)',$(elem).html()).children().remove().end().text().trim().split(" ")[1],
                 termLength: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(2)',$(elem).html()).children().remove().end().text().trim().split(" ")[3] + " years",
                 termExpires: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(2)',$(elem).html()).children().remove().end().text().trim().split(" ")[7],
               },
-              Council9: {
+              atLarge2: {
                 position: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3)',$(elem).html()).children().eq(0).text(),
                 name: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3)',$(elem).html()).children().eq(2).text(),
                 elected: $('div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3)',$(elem).html()).children().remove().end().text().trim().split(" ")[1],
