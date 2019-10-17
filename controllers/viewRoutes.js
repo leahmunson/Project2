@@ -14,7 +14,7 @@ router.get('/:districtId',function(req,res){
             case "1":
                 Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                   console.log(councilData[1][0])
-                  res.render("1", {
+                  res.render("district", {
                     district: districtId, 
                     council: councilData[0].filter(member => member.District.includes(districtId))[0],
                     terms: councilData[1][0].Council1,
@@ -29,7 +29,7 @@ router.get('/:districtId',function(req,res){
             case "2":
                 Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                   console.log(councilData[1][0])
-                  res.render("1", {
+                  res.render("district", {
                     district: districtId, 
                     council: councilData[0].filter(member => member.District.includes(districtId))[0],
                     terms: councilData[1][0].Council2,
@@ -41,7 +41,7 @@ router.get('/:districtId',function(req,res){
               case "3":
                   Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                     console.log(councilData[1][0])
-                    res.render("1", {
+                    res.render("district", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
                       terms: councilData[1][0].Council3,
@@ -53,7 +53,7 @@ router.get('/:districtId',function(req,res){
               case "4":
                   Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                     console.log(councilData[1][0])
-                    res.render("1", {
+                    res.render("district", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
                       terms: councilData[1][0].Council4,
@@ -65,7 +65,7 @@ router.get('/:districtId',function(req,res){
               case "5":
                   Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                     console.log(councilData[1][0])
-                    res.render("1", {
+                    res.render("district", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
                       terms: councilData[1][0].Council5,
@@ -77,7 +77,7 @@ router.get('/:districtId',function(req,res){
               case "6":
                   Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                     console.log(councilData[1][0])
-                    res.render("1", {
+                    res.render("district", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
                       terms: councilData[1][0].Council6,
@@ -89,7 +89,7 @@ router.get('/:districtId',function(req,res){
               case "7":
                   Promise.all([apiImplementation.doCouncil(),apiImplementation.doTerms()]).then(councilData => {
                     console.log(councilData[1][0])
-                    res.render("1", {
+                    res.render("district", {
                       district: districtId, 
                       council: councilData[0].filter(member => member.District.includes(districtId))[0],
                       terms: councilData[1][0].Council7,
