@@ -45,7 +45,7 @@
  .then(function(data) {
         console.log(data) 
         var userDistrict = data.user.district;
-        window.location.href="/district/"+ userDistrict      
+        window.location.href="/auth/login" 
 
         // Clear the form when submitting
         $("#defaultLoginFormEmail").val("");
