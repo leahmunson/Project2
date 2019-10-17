@@ -104,7 +104,7 @@ router.get('/:districtId',function(req,res){
               res.render("login")
           }
     }else {
-        // TODO: handle return to login page
+        // handle return to login page
         console.log("else")
         res.render('login')
     }

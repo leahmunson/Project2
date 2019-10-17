@@ -6,7 +6,7 @@ var bcrypt = require("bcrypt");
 var apiImplementation = require('../routes/apiimplementation');
 
 //get route for logged in users homepage, if logged in will let you in, otherwise will fail
-router.get('/district:data',function(req,res){
+router.get('/district: districtId',function(req,res){
     if(req.session.user) {
         res.render('securepage',req.session.user);
     }else {
