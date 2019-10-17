@@ -50,9 +50,10 @@
     //post event 
     $.post("/auth/signup", { email, password, district })
       .then(function (data) {
-        console.log(data)
+        console.log("SIGN UP RESPONSE DATA:", data)
         if (data) {
-          window.location.href = "/"
+             var userDistrict = data.district;
+        window.location.href="/district/"+ userDistrict      
         }
         else {
         // Clear the form when submitting
