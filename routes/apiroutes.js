@@ -19,7 +19,6 @@ var officialsurl = 'http://www.seattle.gov/elected-officials';
 var wikimayorsurl = 'https://en.wikipedia.org/wiki/Mayor_of_Seattle';
 
 
-var issues ='https://www.seattle.gov/council/issues';
 var campaign = [/*C1 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=173&leftmenu=collapsed',
 /* C2*/'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=172&leftmenu=collapsed',
 /*C3 */'http://web6.seattle.gov/ethics/elections/campaigns.aspx?cycle=2019&type=contest&IDNum=174&leftmenu=collapsed',
@@ -87,22 +86,7 @@ module.exports = function(app) {
 
         //Issues
         app.get("/api/issues", function (req, res) {
-          axios.get(issues)
-          .then(response =>{
-            data = [];
-            const $ = cheerio.load(response.data);
-           $('.thumbnailExcerpt').each((i, elem)=>{
-               data.push({
-                IssueTitle: $('.titleDateContainer',$(elem).html()).text(),
-                IssueText: $('.titleExcerptText',$(elem).html()).text(),
-                Link: "https://www.seattle.gov/" +$('a',$(elem).html()).attr('href'),
-               })
-           })
-            res.json(data)
-          })
-          .catch(error=> {
-            console.log(error);
-          })
+          Promise.all([apiImplementation.doIssues()]).then(issuesData => {res.json(issuesData[0])})
         })
 
 // Council Info

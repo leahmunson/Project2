@@ -4,6 +4,8 @@ var async = require('async');
 
 var meetCityCouncil ='http://www.seattle.gov/council/meet-the-council';
 var cityTerms ='https://www.seattle.gov/cityclerk/agendas-and-legislative-resources/terms-of-office-for-elected-officials';
+var issues ='https://www.seattle.gov/council/issues';
+
 
 module.exports = {
   doCouncil: function doCouncil() {
@@ -118,5 +120,23 @@ module.exports = {
     .catch(error=> {
       console.log(error);
     })
-  }
+  },
+    doIssues: function doIssues() {
+      return axios.get(issues)
+          .then(response =>{
+            data = [];
+            const $ = cheerio.load(response.data);
+           $('.thumbnailExcerpt').each((i, elem)=>{
+               data.push({
+                IssueTitle: $('.titleDateContainer',$(elem).html()).text(),
+                IssueText: $('.titleExcerptText',$(elem).html()).text(),
+                Link: "https://www.seattle.gov/" +$('a',$(elem).html()).attr('href'),
+               })
+           })
+            return data //res.json(data)
+          })
+          .catch(error=> {
+            console.log(error);
+          })
+    }
 }
