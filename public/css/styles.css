@@ -38,6 +38,14 @@ margin-bottom: 2%;
 
 }
 
+.cardss{
+  display: flex !important;
+   justify-content: space-between !important;
+   flex-wrap: wrap !important;
+/* padding-top: 1%; */
+
+
+}
 .card{
   flex: 1 0 50%;
 }

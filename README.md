@@ -23,11 +23,12 @@ NPM Packages Used:
 - Cheerio
 - Express
 - Axios
+- Async
 
 Handlbars, Bootstrap.
 
 # Overview
-
+In order to contribute to this project, first clone the repository to you local machine using the command line. Install the above required npm packages. to run the server on your local hot, make sure to reconfigure the root password and the corresponding port number, this will allow you to view the browser while you are making additions to the application. 
 # Instructions
 
 # Deployed Link
