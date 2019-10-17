@@ -12,8 +12,6 @@ api/campaign
 api/election
 api/electionvids
 
-needs
-funding
 */
 var officialsurl = 'http://www.seattle.gov/elected-officials';
 var wikimayorsurl = 'https://en.wikipedia.org/wiki/Mayor_of_Seattle';

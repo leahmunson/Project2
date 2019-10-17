@@ -3,6 +3,7 @@ var router = express.Router();
 
 var apiImplementation = require('../routes/apiimplementation')
 
+
 router.get('/:districtId',function(req,res){
     console.log(req.params.districtId);
     console.log(req.session.user);
