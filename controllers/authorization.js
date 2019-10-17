@@ -77,4 +77,13 @@ router.get("/elections", function(req, res) {
   res.render("elections");
 });
 
+router.get("/issues", function(req, res) {
+  res.render("issues");
+});
+router.get("/district", function(req, res) {
+  res.render("district");
+});
+router.get("/politcians", function(req, res) {
+  res.render("politcians");
+});
 module.exports = router;
