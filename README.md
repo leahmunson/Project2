@@ -23,15 +23,6 @@ SeaPoll is a centralized, informative, data-driven website that compiles unbiase
 - Issues Page
 
 
-# Technologies Used
-- JavaScript
-NPM Packages Used: 
-- Cheerio
-- Express
-- Axios
-- Async
-
-Handlbars, Bootstrap.
 
 # Instructions
 In order to contribute to this project, first clone the repository to you local machine using the command line. Install the above required npm packages. to run the server on your local hot, make sure to reconfigure the root password and the corresponding port number, this will allow you to view the browser while you are making additions to the application. 
@@ -60,3 +51,17 @@ $ npm install async
 - Images of what it should look like
 > open in code editor 
 - *** need screen shot of 
+
+<!-- make this into the fancy little button links -->
+# Technologies Used
+- JavaScript
+- Handlebars
+- Bootstrap
+- HTML
+- CSS
+NPM Packages Used: 
+- Cheerio
+- Express
+- Axios
+- Async
+- Sequelize
