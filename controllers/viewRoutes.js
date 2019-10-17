@@ -19,7 +19,8 @@ router.get('/:districtId',function(req,res){
                     council: councilData[0].filter(member => member.District.includes(districtId))[0],
                     terms: councilData[1][0].Council1,
                     atLarge1: councilData[1][0].atLarge1,
-                    atLarge2: councilData[1][0].atLarge2
+                    atLarge2: councilData[1][0].atLarge2,
+                    image: Mosqueda_225x225.jpg
                   })
                 })
                 
