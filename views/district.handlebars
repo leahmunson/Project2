@@ -3,25 +3,74 @@
     height: 350px;"
  ></div>
 <div class="card-deck buff marginsCard">
-  <div class="card">
+  <div class="card" "councilOne">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title"></h5>
+      <p class="card-text">
+        <h1> Councilmember{{council.Name}}</h1>
+       {{council.District}}<br>
+
+        <h3>Term Elected:{{terms.elected}}</h3>
+        <h3> Term Length: {{terms.termLength}}</h3>
+        <h3> Term Expires: {{terms.termExpires}}</h3>
+       <h3>Committees</h3>
+            <p><strong>Chairman: </strong>{{council.CommitteesChair}}</p> <br>
+            <p><strong>ViceChairman: </strong>{{council.ViceChair}}</p><br>
+            <p><strong>Member: </strong>{{council.Member}}</p><br>
+            <p><strong>Alternate: </strong>{{council.Alternate}}</p>
+
+    <h3>Contact</h3>
+        <p><strong>Phone:</strong> {{council.ContactPhone}}</p>
+        <p><strong>Email: </strong>{{council.ContactEmail}}</p>
+      </p>
     </div>
   </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card" "councilTwo">
+    <img class="card-img-top" src="images/Mosqueda_225x225.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <h5 class="card-title"></h5>
+      <p class="card-text">
+        <h1> Councilmember Teresa Mosqueda</h1>
+       Citywide<br>
+
+        <h3>Term Elected: 2017</h3>
+        <h3> Term Length: 2017-2021</h3>
+        <h3> Term Expires: 2021</h3>
+       <h3>Committees</h3>
+            <p><strong>Chairman: </strong>Housing, Health, Energy and Workers’ Rights committee</p> <br>
+            <p><strong>ViceChairman: </strong>Gender Equity, Safe Communities, New Americans and Education</p><br>
+            <p><strong>Member: </strong>Governance, Equity and Technology</p><br>
+            <p><strong>Alternate: </strong>Human Services, Equitable Development and Renter Rights</p>
+
+    <h3>Contact</h3>
+        <p><strong>Phone: </strong>206-684-8806</p>
+        <p><strong>Email: </strong>teresa.mosqueda@seattle.gov</p>
+      </p>
     </div>
   </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card" "councilThree">
+    <img class="card-img-top" src="images/Gonzalez-225x225.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <h5 class="card-title"></h5>
+      <p class="card-text">
+        <h1> Councilmember Lorena González</h1>
+       Citywide<br>
+
+        <h3>Term Elected: 2015</h3>
+        <h3> Term Length: 2018-2022</h3>
+        <h3> Term Expires: 2022</h3>
+       <h3>Committees</h3>
+            <p><strong>Chairman: </strong>Gender Equity, Safe Communities, New Americans and Education</p> <br>
+            <p><strong>ViceChairman: </strong> Finance and Neighborhoods</p><br>
+            <p><strong>Member: </strong>Civic Development, Public Assets and Native Communities</p><br>
+            <p><strong>Alternate: </strong>Planning, Land Use and Zoning
+Contact</p>
+
+    <h3>Contact</h3>
+        <p><strong>Phone:</strong> 206-684-8802</p>
+        <p><strong>Email: </strong>lorena.gonzalez@seattle.gov</p>
+      </p>
     </div>
   </div>
 </div>

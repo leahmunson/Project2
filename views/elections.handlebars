@@ -448,69 +448,35 @@
 <div class="container">
   <div class="col-sm">
     <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
+      <h5 style="color:white" class="card-header h5 unique-color">Important Election Dates</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Next Election: General Election </h5>
+        <p class="card-text">Candidate Filing Deadline: May 17, 2019.</p>
+        <p class="card-text">Online Mail Primary Election Registration Deadline: July 29, 2019</p>
+        <p class="card-text">Online Mail General Election Registration Deadline: October 28, 2019</p>
+        <p class="card-text">Primary Election: August 6, 2019</p>
+        <p class="card-text">General Election: November 5, 2019</p>
 
       </div>
     </div>
   </div>
+  {{#each campaigns}}
   <div class="col-sm">
     <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
+      <h5 style="color:white" class="card-header h5 unique-color">{{this.District}}</h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+   
+        <p class="card-text">
+           {{this.Incumbent}} <br>
+          Candidate One: {{this.Name1}}<br>
+          Candidate Two: {{this.Name2}}
+        </p>
 
       </div>
     </div>
   </div>
-  <div class="col-sm">
-    <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card buff">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card buff strong ">
-      <h5 style="color:white" class="card-header h5 unique-color">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
+  {{/each}}
+  
 
 </div>
 <div class="cards">

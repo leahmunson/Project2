@@ -13,17 +13,22 @@ Clearly list the technologies used in the app
 State your role in the app development -->
 
 # Problem
-SeattlePoll 
+Life is complicated; understanding local politics should not be. With so many different sources providing information, it can be overwhelming to try and find unbiased content. This is a major deterrent to having well-informed, involved citizens. 
+
+SeaPoll is a centralized, informative, data-driven website that compiles unbiased political (local and national) information from a variety of sources in a digestible and user-friendly format. Information regarding local and regional politicians, policies, upcoming forums, and elections are available with two viewing options: visitor or a customizable user profile.
+
 
 # Technologies Used
 NPM Packages Used: 
 - Cheerio
 - Express
+- Axios
+- Async
 
 Handlbars, Bootstrap.
 
 # Overview
-
+In order to contribute to this project, first clone the repository to you local machine using the command line. Install the above required npm packages. to run the server on your local hot, make sure to reconfigure the root password and the corresponding port number, this will allow you to view the browser while you are making additions to the application. 
 # Instructions
 
 # Deployed Link
