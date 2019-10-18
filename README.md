@@ -5,22 +5,15 @@ Life is complicated; understanding local politics should not be. With so many di
 
 SeaPoll is a centralized, informative, data-driven website that compiles unbiased political (local and national) information from a variety of sources in a digestible and user-friendly format. Information regarding local and regional politicians, policies, upcoming forums, and elections are available with two viewing options: visitor or a customizable user profile.
 
-- Home page
-- Politicians Page
-- Election Page
-- Issues Page
+# Installation
+> Clone the repository to you local machine using the command line
 
-
-
-# Instructions
-In order to contribute to this project, first clone the repository to you local machine using the command line. Install the above required npm packages. to run the server on your local hot, make sure to reconfigure the root password and the corresponding port number, this will allow you to view the browser while you are making additions to the application. 
-
-# Deployed Link
-
-## Installation
 > Install required npm packages
 
 > Configure and initialize node server
+
+## Deployed Link
+> https://seapoll.herokuapp.com/
 
  
  The home page  upon opening the webpage ![Alt Text](public/css/seaPollScreen/seaPollHome.png)
