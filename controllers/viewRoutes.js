@@ -9,7 +9,7 @@ router.get('/:districtId',function(req,res){
     console.log(req.session.user);
     var districtId = req.params.districtId
     
-    if(req.session.user) {
+    // if(req.session.user) {
         //create a switch statement on districtId to route person to the correct district page
         switch(districtId) {
             case "1":
@@ -104,11 +104,11 @@ router.get('/:districtId',function(req,res){
               console.log("default")
               res.render("login")
           }
-    }else {
-        // TODO: handle return to login page
-        console.log("else")
-        res.render('login')
-    }
+    // }else {
+    //     // handle return to login page
+    //     console.log("else")
+    //     res.render('login')
+    // }
 })
 
 module.exports = router;

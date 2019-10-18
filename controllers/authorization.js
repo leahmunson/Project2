@@ -6,9 +6,9 @@ var bcrypt = require("bcrypt");
 var apiImplementation = require('../routes/apiimplementation');
 
 //get route for logged in users homepage, if logged in will let you in, otherwise will fail
-router.get('/district:data',function(req,res){
-    if(req.session.user) {
-        res.render('securepage',req.session.user);
+router.get('district/:districtId',function(req,res){
+  if(req.session.user) {
+    res.render('securepage',req.session.user);
     }else {
         res.send('Please login to get your customized district information.')
     }
@@ -29,7 +29,7 @@ router.post("/signup", function(req, res) {
   }).then(function(newUser) {
     console.log(newUser);
     // res.json(newUser);
-    res.json(true)
+    res.json(newUser)
 
   }).catch(err=>console.log(err))
 });
