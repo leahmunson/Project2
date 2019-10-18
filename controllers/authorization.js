@@ -16,7 +16,7 @@ router.get('district/:districtId',function(req,res){
 
 //loads signup form
 router.get("/signup", function(req, res) {
-  res.render("signup");
+  res.render("signUp");
 });
 
 //creates new instance of user
