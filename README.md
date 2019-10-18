@@ -1,16 +1,4 @@
-# Project2
-
-<!-- In order to meet the Employer Competitive standards and be ready to show your application to employers, the README.md file should meet the following criteria:
-
-
-Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
-
-Give a high-level overview of how the app is organized
-Give start-to-finish instructions on how to run the app
-Include screenshots, gifs or videos of the app functioning
-Contain a link to a deployed version of the app
-Clearly list the technologies used in the app
-State your role in the app development -->
+# SEAPOLL
 
 # Summary
 Life is complicated; understanding local politics should not be. With so many different sources providing information, it can be overwhelming to try and find unbiased content. This is a major deterrent to having well-informed, involved citizens. 
@@ -30,27 +18,25 @@ In order to contribute to this project, first clone the repository to you local 
 # Deployed Link
 
 ## Installation
+> Install required npm packages
 
-### Clone
-```shell
-$ git clone https://github.com/leahmunson/Project2.git
-$ cd Project2
+> Configure and initialize node server
 
-```
+ 
+ The home page  upon opening the webpage ![Alt Text](public/css/seaPollScreen/seaPollHome.png)
 
-> install npm packages
+ Click on the Politician tab and the user is redirected to a page that contains the information on elected city counsel members: ![Alt Text](public/css/seaPollScreen/politicians.png)
+ 
+ The election page contains information regarding incumbents and candidates for each district as well as a map of the 24 hour drop boxes: ![Alt Text](public/css/seaPollScreen/electionTop.png)
+ ![Alt Text](public/css/seaPollScreen/Elections.png)
+ 
+ Issues page: ![Alt Text](public/css/seaPollScreen/Issues.png)
+ 
+ Search for counsel members by user address: ![Alt Text](public/css/seaPollScreen/seaPollFindCouncilMembers.png)
 
-```shell
-$ npm init -y
-$ npm install 
-$ npm install cheerio
-$ npm install express
-$ npm install axios
-$ npm install async
-```
-- Images of what it should look like
-> open in code editor 
-- *** need screen shot of 
+ Sign up form to create custom profile: ![Alt Text](public/css/seaPollScreen/signUp.png)
+ 
+ #
 
 <!-- make this into the fancy little button links -->
 # Technologies Used
@@ -58,8 +44,9 @@ $ npm install async
 - Handlebars
 - Bootstrap
 - HTML
-- CSS
-NPM Packages Used: 
+- CSS 
+
+## NPM packages
 - Cheerio
 - Express
 - Axios
